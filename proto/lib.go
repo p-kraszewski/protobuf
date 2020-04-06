@@ -139,7 +139,7 @@ The resulting file, test.pb.go, is:
 		//	*Test_Number
 		//	*Test_Name
 		Union            isTest_Union `protobuf_oneof:"union"`
-		XXX_unrecognized []byte       `json:"-"`
+		XXX_unrecognized []byte       `json:"-" bson:"-"`
 	}
 	func (m *Test) Reset()         { *m = Test{} }
 	func (m *Test) String() string { return proto.CompactTextString(m) }
