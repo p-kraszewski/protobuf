@@ -102,6 +102,9 @@ func (p GoImportPath) String() string { return strconv.Quote(string(p)) }
 // A GoPackageName is the name of a Go package. e.g., "protobuf".
 type GoPackageName string
 
+// A GoMarhsallersList is list of additional marshallers to support
+type GoMarhsallersList []string
+
 // Each type we import as a protocol buffer (other than FileDescriptorProto) needs
 // a pointer to the FileDescriptorProto that represents it.  These types achieve that
 // wrapping by placing each Proto inside a struct with the pointer to its File. The
@@ -274,6 +277,7 @@ type FileDescriptor struct {
 
 	importPath  GoImportPath  // Import path of this file's package.
 	packageName GoPackageName // Name of this file's Go package.
+	additionalMarshallers GoMarhsallersList // Additional marshallers.
 
 	proto3 bool // whether to generate proto3 code for this file
 }
@@ -2049,16 +2053,16 @@ func (g *Generator) generateDefaultConstants(mc *msgCtx, topLevelFields []topLev
 
 // generateInternalStructFields just adds the XXX_<something> fields to the message struct.
 func (g *Generator) generateInternalStructFields(mc *msgCtx, topLevelFields []topLevelField) {
-	g.P("XXX_NoUnkeyedLiteral\tstruct{} `json:\"-\"`") // prevent unkeyed struct literals
+	g.P("XXX_NoUnkeyedLiteral\tstruct{} `json:\"-\" bson:\"-\"`") // prevent unkeyed struct literals
 	if len(mc.message.ExtensionRange) > 0 {
 		messageset := ""
 		if opts := mc.message.Options; opts != nil && opts.GetMessageSetWireFormat() {
 			messageset = "protobuf_messageset:\"1\" "
 		}
-		g.P(g.Pkg["proto"], ".XXX_InternalExtensions `", messageset, "json:\"-\"`")
+		g.P(g.Pkg["proto"], ".XXX_InternalExtensions `", messageset, "json:\"-\" bson:\"-\"`")
 	}
-	g.P("XXX_unrecognized\t[]byte `json:\"-\"`")
-	g.P("XXX_sizecache\tint32 `json:\"-\"`")
+	g.P("XXX_unrecognized\t[]byte `json:\"-\" bson:\"-\"`")
+	g.P("XXX_sizecache\tint32 `json:\"-\" bson:\"-\"`")
 
 }
 
@@ -2240,7 +2244,7 @@ func (g *Generator) generateMessage(message *Descriptor) {
 		fieldName, fieldGetterName := ns[0], ns[1]
 		typename, wiretype := g.GoType(message, field)
 		jsonName := *field.Name
-		tag := fmt.Sprintf("protobuf:%s json:%q", g.goTag(message, field, wiretype), jsonName+",omitempty")
+		tag := fmt.Sprintf("protobuf:%s json:%q bson:%q", g.goTag(message, field, wiretype), jsonName+",omitempty",jsonName+",omitempty")
 
 		oneof := field.OneofIndex != nil
 		if oneof && oFields[*field.OneofIndex] == nil {

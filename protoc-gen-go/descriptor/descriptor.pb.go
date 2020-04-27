@@ -348,9 +348,9 @@ func (MethodOptions_IdempotencyLevel) EnumDescriptor() ([]byte, []int) {
 // files it parses.
 type FileDescriptorSet struct {
 	File                 []*FileDescriptorProto `protobuf:"bytes,1,rep,name=file" json:"file,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
-	XXX_unrecognized     []byte                 `json:"-"`
-	XXX_sizecache        int32                  `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}               `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                 `json:"-" bson:"-"`
+	XXX_sizecache        int32                  `json:"-" bson:"-"`
 }
 
 func (m *FileDescriptorSet) Reset()         { *m = FileDescriptorSet{} }
@@ -410,9 +410,9 @@ type FileDescriptorProto struct {
 	// The syntax of the proto file.
 	// The supported values are "proto2" and "proto3".
 	Syntax               *string  `protobuf:"bytes,12,opt,name=syntax" json:"syntax,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *FileDescriptorProto) Reset()         { *m = FileDescriptorProto{} }
@@ -538,9 +538,9 @@ type DescriptorProto struct {
 	// Reserved field names, which may not be used by fields in the same message.
 	// A given name may only be reserved once.
 	ReservedName         []string `protobuf:"bytes,10,rep,name=reserved_name,json=reservedName" json:"reserved_name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *DescriptorProto) Reset()         { *m = DescriptorProto{} }
@@ -642,9 +642,9 @@ type DescriptorProto_ExtensionRange struct {
 	Start                *int32                 `protobuf:"varint,1,opt,name=start" json:"start,omitempty"`
 	End                  *int32                 `protobuf:"varint,2,opt,name=end" json:"end,omitempty"`
 	Options              *ExtensionRangeOptions `protobuf:"bytes,3,opt,name=options" json:"options,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
-	XXX_unrecognized     []byte                 `json:"-"`
-	XXX_sizecache        int32                  `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}               `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                 `json:"-" bson:"-"`
+	XXX_sizecache        int32                  `json:"-" bson:"-"`
 }
 
 func (m *DescriptorProto_ExtensionRange) Reset()         { *m = DescriptorProto_ExtensionRange{} }
@@ -699,9 +699,9 @@ func (m *DescriptorProto_ExtensionRange) GetOptions() *ExtensionRangeOptions {
 type DescriptorProto_ReservedRange struct {
 	Start                *int32   `protobuf:"varint,1,opt,name=start" json:"start,omitempty"`
 	End                  *int32   `protobuf:"varint,2,opt,name=end" json:"end,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *DescriptorProto_ReservedRange) Reset()         { *m = DescriptorProto_ReservedRange{} }
@@ -746,10 +746,10 @@ func (m *DescriptorProto_ReservedRange) GetEnd() int32 {
 type ExtensionRangeOptions struct {
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *ExtensionRangeOptions) Reset()         { *m = ExtensionRangeOptions{} }
@@ -824,9 +824,9 @@ type FieldDescriptorProto struct {
 	// it to camelCase.
 	JsonName             *string       `protobuf:"bytes,10,opt,name=json_name,json=jsonName" json:"json_name,omitempty"`
 	Options              *FieldOptions `protobuf:"bytes,8,opt,name=options" json:"options,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-" bson:"-"`
+	XXX_unrecognized     []byte        `json:"-" bson:"-"`
+	XXX_sizecache        int32         `json:"-" bson:"-"`
 }
 
 func (m *FieldDescriptorProto) Reset()         { *m = FieldDescriptorProto{} }
@@ -928,9 +928,9 @@ func (m *FieldDescriptorProto) GetOptions() *FieldOptions {
 type OneofDescriptorProto struct {
 	Name                 *string       `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 	Options              *OneofOptions `protobuf:"bytes,2,opt,name=options" json:"options,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-" bson:"-"`
+	XXX_unrecognized     []byte        `json:"-" bson:"-"`
+	XXX_sizecache        int32         `json:"-" bson:"-"`
 }
 
 func (m *OneofDescriptorProto) Reset()         { *m = OneofDescriptorProto{} }
@@ -984,9 +984,9 @@ type EnumDescriptorProto struct {
 	// Reserved enum value names, which may not be reused. A given name may only
 	// be reserved once.
 	ReservedName         []string `protobuf:"bytes,5,rep,name=reserved_name,json=reservedName" json:"reserved_name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *EnumDescriptorProto) Reset()         { *m = EnumDescriptorProto{} }
@@ -1058,9 +1058,9 @@ func (m *EnumDescriptorProto) GetReservedName() []string {
 type EnumDescriptorProto_EnumReservedRange struct {
 	Start                *int32   `protobuf:"varint,1,opt,name=start" json:"start,omitempty"`
 	End                  *int32   `protobuf:"varint,2,opt,name=end" json:"end,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *EnumDescriptorProto_EnumReservedRange) Reset()         { *m = EnumDescriptorProto_EnumReservedRange{} }
@@ -1107,9 +1107,9 @@ type EnumValueDescriptorProto struct {
 	Name                 *string           `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 	Number               *int32            `protobuf:"varint,2,opt,name=number" json:"number,omitempty"`
 	Options              *EnumValueOptions `protobuf:"bytes,3,opt,name=options" json:"options,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-" bson:"-"`
+	XXX_unrecognized     []byte            `json:"-" bson:"-"`
+	XXX_sizecache        int32             `json:"-" bson:"-"`
 }
 
 func (m *EnumValueDescriptorProto) Reset()         { *m = EnumValueDescriptorProto{} }
@@ -1163,9 +1163,9 @@ type ServiceDescriptorProto struct {
 	Name                 *string                  `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 	Method               []*MethodDescriptorProto `protobuf:"bytes,2,rep,name=method" json:"method,omitempty"`
 	Options              *ServiceOptions          `protobuf:"bytes,3,opt,name=options" json:"options,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                 `json:"-"`
-	XXX_unrecognized     []byte                   `json:"-"`
-	XXX_sizecache        int32                    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                 `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                   `json:"-" bson:"-"`
+	XXX_sizecache        int32                    `json:"-" bson:"-"`
 }
 
 func (m *ServiceDescriptorProto) Reset()         { *m = ServiceDescriptorProto{} }
@@ -1226,9 +1226,9 @@ type MethodDescriptorProto struct {
 	ClientStreaming *bool `protobuf:"varint,5,opt,name=client_streaming,json=clientStreaming,def=0" json:"client_streaming,omitempty"`
 	// Identifies if server streams multiple server messages
 	ServerStreaming      *bool    `protobuf:"varint,6,opt,name=server_streaming,json=serverStreaming,def=0" json:"server_streaming,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *MethodDescriptorProto) Reset()         { *m = MethodDescriptorProto{} }
@@ -1391,10 +1391,10 @@ type FileOptions struct {
 	// The parser stores options it doesn't recognize here.
 	// See the documentation for the "Options" section above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *FileOptions) Reset()         { *m = FileOptions{} }
@@ -1648,10 +1648,10 @@ type MessageOptions struct {
 	MapEntry *bool `protobuf:"varint,7,opt,name=map_entry,json=mapEntry" json:"map_entry,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *MessageOptions) Reset()         { *m = MessageOptions{} }
@@ -1788,10 +1788,10 @@ type FieldOptions struct {
 	Weak *bool `protobuf:"varint,10,opt,name=weak,def=0" json:"weak,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *FieldOptions) Reset()         { *m = FieldOptions{} }
@@ -1885,10 +1885,10 @@ func (m *FieldOptions) GetUninterpretedOption() []*UninterpretedOption {
 type OneofOptions struct {
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *OneofOptions) Reset()         { *m = OneofOptions{} }
@@ -1942,10 +1942,10 @@ type EnumOptions struct {
 	Deprecated *bool `protobuf:"varint,3,opt,name=deprecated,def=0" json:"deprecated,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *EnumOptions) Reset()         { *m = EnumOptions{} }
@@ -2012,10 +2012,10 @@ type EnumValueOptions struct {
 	Deprecated *bool `protobuf:"varint,1,opt,name=deprecated,def=0" json:"deprecated,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *EnumValueOptions) Reset()         { *m = EnumValueOptions{} }
@@ -2075,10 +2075,10 @@ type ServiceOptions struct {
 	Deprecated *bool `protobuf:"varint,33,opt,name=deprecated,def=0" json:"deprecated,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *ServiceOptions) Reset()         { *m = ServiceOptions{} }
@@ -2139,10 +2139,10 @@ type MethodOptions struct {
 	IdempotencyLevel *MethodOptions_IdempotencyLevel `protobuf:"varint,34,opt,name=idempotency_level,json=idempotencyLevel,enum=google.protobuf.MethodOptions_IdempotencyLevel,def=0" json:"idempotency_level,omitempty"`
 	// The parser stores options it doesn't recognize here. See above.
 	UninterpretedOption          []*UninterpretedOption `protobuf:"bytes,999,rep,name=uninterpreted_option,json=uninterpretedOption" json:"uninterpreted_option,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}               `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}               `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *MethodOptions) Reset()         { *m = MethodOptions{} }
@@ -2218,9 +2218,9 @@ type UninterpretedOption struct {
 	DoubleValue          *float64 `protobuf:"fixed64,6,opt,name=double_value,json=doubleValue" json:"double_value,omitempty"`
 	StringValue          []byte   `protobuf:"bytes,7,opt,name=string_value,json=stringValue" json:"string_value,omitempty"`
 	AggregateValue       *string  `protobuf:"bytes,8,opt,name=aggregate_value,json=aggregateValue" json:"aggregate_value,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *UninterpretedOption) Reset()         { *m = UninterpretedOption{} }
@@ -2305,9 +2305,9 @@ func (m *UninterpretedOption) GetAggregateValue() string {
 type UninterpretedOption_NamePart struct {
 	NamePart             *string  `protobuf:"bytes,1,req,name=name_part,json=namePart" json:"name_part,omitempty"`
 	IsExtension          *bool    `protobuf:"varint,2,req,name=is_extension,json=isExtension" json:"is_extension,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *UninterpretedOption_NamePart) Reset()         { *m = UninterpretedOption_NamePart{} }
@@ -2396,9 +2396,9 @@ type SourceCodeInfo struct {
 	//   ignore those that it doesn't understand, as more types of locations could
 	//   be recorded in the future.
 	Location             []*SourceCodeInfo_Location `protobuf:"bytes,1,rep,name=location" json:"location,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
-	XXX_unrecognized     []byte                     `json:"-"`
-	XXX_sizecache        int32                      `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                   `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                     `json:"-" bson:"-"`
+	XXX_sizecache        int32                      `json:"-" bson:"-"`
 }
 
 func (m *SourceCodeInfo) Reset()         { *m = SourceCodeInfo{} }
@@ -2514,9 +2514,9 @@ type SourceCodeInfo_Location struct {
 	LeadingComments         *string  `protobuf:"bytes,3,opt,name=leading_comments,json=leadingComments" json:"leading_comments,omitempty"`
 	TrailingComments        *string  `protobuf:"bytes,4,opt,name=trailing_comments,json=trailingComments" json:"trailing_comments,omitempty"`
 	LeadingDetachedComments []string `protobuf:"bytes,6,rep,name=leading_detached_comments,json=leadingDetachedComments" json:"leading_detached_comments,omitempty"`
-	XXX_NoUnkeyedLiteral    struct{} `json:"-"`
-	XXX_unrecognized        []byte   `json:"-"`
-	XXX_sizecache           int32    `json:"-"`
+	XXX_NoUnkeyedLiteral    struct{} `json:"-" bson:"-"`
+	XXX_unrecognized        []byte   `json:"-" bson:"-"`
+	XXX_sizecache           int32    `json:"-" bson:"-"`
 }
 
 func (m *SourceCodeInfo_Location) Reset()         { *m = SourceCodeInfo_Location{} }
@@ -2586,9 +2586,9 @@ type GeneratedCodeInfo struct {
 	// An Annotation connects some span of text in generated code to an element
 	// of its generating .proto file.
 	Annotation           []*GeneratedCodeInfo_Annotation `protobuf:"bytes,1,rep,name=annotation" json:"annotation,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
-	XXX_unrecognized     []byte                          `json:"-"`
-	XXX_sizecache        int32                           `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                        `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                          `json:"-" bson:"-"`
+	XXX_sizecache        int32                           `json:"-" bson:"-"`
 }
 
 func (m *GeneratedCodeInfo) Reset()         { *m = GeneratedCodeInfo{} }
@@ -2636,9 +2636,9 @@ type GeneratedCodeInfo_Annotation struct {
 	// relates to the identified offset. The end offset should be one past
 	// the last relevant byte (so the length of the text = end - begin).
 	End                  *int32   `protobuf:"varint,4,opt,name=end" json:"end,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GeneratedCodeInfo_Annotation) Reset()         { *m = GeneratedCodeInfo_Annotation{} }

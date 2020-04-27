@@ -303,9 +303,9 @@ func (RepeatedEnum_Color) EnumDescriptor() ([]byte, []int) {
 
 type GoEnum struct {
 	Foo                  *FOO     `protobuf:"varint,1,req,name=foo,enum=test_proto.FOO" json:"foo,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoEnum) Reset()         { *m = GoEnum{} }
@@ -343,9 +343,9 @@ func (m *GoEnum) GetFoo() FOO {
 type GoTestField struct {
 	Label                *string  `protobuf:"bytes,1,req,name=Label" json:"Label,omitempty"`
 	Type                 *string  `protobuf:"bytes,2,req,name=Type" json:"Type,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoTestField) Reset()         { *m = GoTestField{} }
@@ -477,9 +477,9 @@ type GoTest struct {
 	Requiredgroup            *GoTest_RequiredGroup   `protobuf:"group,70,req,name=RequiredGroup,json=requiredgroup" json:"requiredgroup,omitempty"`
 	Repeatedgroup            []*GoTest_RepeatedGroup `protobuf:"group,80,rep,name=RepeatedGroup,json=repeatedgroup" json:"repeatedgroup,omitempty"`
 	Optionalgroup            *GoTest_OptionalGroup   `protobuf:"group,90,opt,name=OptionalGroup,json=optionalgroup" json:"optionalgroup,omitempty"`
-	XXX_NoUnkeyedLiteral     struct{}                `json:"-"`
-	XXX_unrecognized         []byte                  `json:"-"`
-	XXX_sizecache            int32                   `json:"-"`
+	XXX_NoUnkeyedLiteral     struct{}                `json:"-" bson:"-"`
+	XXX_unrecognized         []byte                  `json:"-" bson:"-"`
+	XXX_sizecache            int32                   `json:"-" bson:"-"`
 }
 
 func (m *GoTest) Reset()         { *m = GoTest{} }
@@ -1102,9 +1102,9 @@ func (m *GoTest) GetOptionalgroup() *GoTest_OptionalGroup {
 // Required, repeated, and optional groups.
 type GoTest_RequiredGroup struct {
 	RequiredField        *string  `protobuf:"bytes,71,req,name=RequiredField" json:"RequiredField,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoTest_RequiredGroup) Reset()         { *m = GoTest_RequiredGroup{} }
@@ -1141,9 +1141,9 @@ func (m *GoTest_RequiredGroup) GetRequiredField() string {
 
 type GoTest_RepeatedGroup struct {
 	RequiredField        *string  `protobuf:"bytes,81,req,name=RequiredField" json:"RequiredField,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoTest_RepeatedGroup) Reset()         { *m = GoTest_RepeatedGroup{} }
@@ -1180,9 +1180,9 @@ func (m *GoTest_RepeatedGroup) GetRequiredField() string {
 
 type GoTest_OptionalGroup struct {
 	RequiredField        *string  `protobuf:"bytes,91,req,name=RequiredField" json:"RequiredField,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoTest_OptionalGroup) Reset()         { *m = GoTest_OptionalGroup{} }
@@ -1220,9 +1220,9 @@ func (m *GoTest_OptionalGroup) GetRequiredField() string {
 // For testing a group containing a required field.
 type GoTestRequiredGroupField struct {
 	Group                *GoTestRequiredGroupField_Group `protobuf:"group,1,req,name=Group,json=group" json:"group,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
-	XXX_unrecognized     []byte                          `json:"-"`
-	XXX_sizecache        int32                           `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                        `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                          `json:"-" bson:"-"`
+	XXX_sizecache        int32                           `json:"-" bson:"-"`
 }
 
 func (m *GoTestRequiredGroupField) Reset()         { *m = GoTestRequiredGroupField{} }
@@ -1259,9 +1259,9 @@ func (m *GoTestRequiredGroupField) GetGroup() *GoTestRequiredGroupField_Group {
 
 type GoTestRequiredGroupField_Group struct {
 	Field                *int32   `protobuf:"varint,2,req,name=Field" json:"Field,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoTestRequiredGroupField_Group) Reset()         { *m = GoTestRequiredGroupField_Group{} }
@@ -1305,9 +1305,9 @@ type GoSkipTest struct {
 	SkipFixed64          *uint64               `protobuf:"fixed64,13,req,name=skip_fixed64,json=skipFixed64" json:"skip_fixed64,omitempty"`
 	SkipString           *string               `protobuf:"bytes,14,req,name=skip_string,json=skipString" json:"skip_string,omitempty"`
 	Skipgroup            *GoSkipTest_SkipGroup `protobuf:"group,15,req,name=SkipGroup,json=skipgroup" json:"skipgroup,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
-	XXX_unrecognized     []byte                `json:"-"`
-	XXX_sizecache        int32                 `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                `json:"-" bson:"-"`
+	XXX_sizecache        int32                 `json:"-" bson:"-"`
 }
 
 func (m *GoSkipTest) Reset()         { *m = GoSkipTest{} }
@@ -1373,9 +1373,9 @@ func (m *GoSkipTest) GetSkipgroup() *GoSkipTest_SkipGroup {
 type GoSkipTest_SkipGroup struct {
 	GroupInt32           *int32   `protobuf:"varint,16,req,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
 	GroupString          *string  `protobuf:"bytes,17,req,name=group_string,json=groupString" json:"group_string,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GoSkipTest_SkipGroup) Reset()         { *m = GoSkipTest_SkipGroup{} }
@@ -1421,9 +1421,9 @@ func (m *GoSkipTest_SkipGroup) GetGroupString() string {
 // A serialized instance of one should be deserializable as the other.
 type NonPackedTest struct {
 	A                    []int32  `protobuf:"varint,1,rep,name=a" json:"a,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *NonPackedTest) Reset()         { *m = NonPackedTest{} }
@@ -1460,9 +1460,9 @@ func (m *NonPackedTest) GetA() []int32 {
 
 type PackedTest struct {
 	B                    []int32  `protobuf:"varint,1,rep,packed,name=b" json:"b,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *PackedTest) Reset()         { *m = PackedTest{} }
@@ -1500,9 +1500,9 @@ func (m *PackedTest) GetB() []int32 {
 type MaxTag struct {
 	// Maximum possible tag number.
 	LastField            *string  `protobuf:"bytes,536870911,opt,name=last_field,json=lastField" json:"last_field,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *MaxTag) Reset()         { *m = MaxTag{} }
@@ -1540,9 +1540,9 @@ func (m *MaxTag) GetLastField() string {
 type OldMessage struct {
 	Nested               *OldMessage_Nested `protobuf:"bytes,1,opt,name=nested" json:"nested,omitempty"`
 	Num                  *int32             `protobuf:"varint,2,opt,name=num" json:"num,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-" bson:"-"`
+	XXX_unrecognized     []byte             `json:"-" bson:"-"`
+	XXX_sizecache        int32              `json:"-" bson:"-"`
 }
 
 func (m *OldMessage) Reset()         { *m = OldMessage{} }
@@ -1586,9 +1586,9 @@ func (m *OldMessage) GetNum() int32 {
 
 type OldMessage_Nested struct {
 	Name                 *string  `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *OldMessage_Nested) Reset()         { *m = OldMessage_Nested{} }
@@ -1629,9 +1629,9 @@ type NewMessage struct {
 	Nested *NewMessage_Nested `protobuf:"bytes,1,opt,name=nested" json:"nested,omitempty"`
 	// This is an int32 in OldMessage.
 	Num                  *int64   `protobuf:"varint,2,opt,name=num" json:"num,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *NewMessage) Reset()         { *m = NewMessage{} }
@@ -1676,9 +1676,9 @@ func (m *NewMessage) GetNum() int64 {
 type NewMessage_Nested struct {
 	Name                 *string  `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 	FoodGroup            *string  `protobuf:"bytes,2,opt,name=food_group,json=foodGroup" json:"food_group,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *NewMessage_Nested) Reset()         { *m = NewMessage_Nested{} }
@@ -1724,9 +1724,9 @@ type InnerMessage struct {
 	Host                 *string  `protobuf:"bytes,1,req,name=host" json:"host,omitempty"`
 	Port                 *int32   `protobuf:"varint,2,opt,name=port,def=4000" json:"port,omitempty"`
 	Connected            *bool    `protobuf:"varint,3,opt,name=connected" json:"connected,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *InnerMessage) Reset()         { *m = InnerMessage{} }
@@ -1782,10 +1782,10 @@ type OtherMessage struct {
 	Value                        []byte        `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
 	Weight                       *float32      `protobuf:"fixed32,3,opt,name=weight" json:"weight,omitempty"`
 	Inner                        *InnerMessage `protobuf:"bytes,4,opt,name=inner" json:"inner,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}      `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{}      `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *OtherMessage) Reset()         { *m = OtherMessage{} }
@@ -1851,9 +1851,9 @@ func (m *OtherMessage) GetInner() *InnerMessage {
 
 type RequiredInnerMessage struct {
 	LeoFinallyWonAnOscar *InnerMessage `protobuf:"bytes,1,req,name=leo_finally_won_an_oscar,json=leoFinallyWonAnOscar" json:"leo_finally_won_an_oscar,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-" bson:"-"`
+	XXX_unrecognized     []byte        `json:"-" bson:"-"`
+	XXX_sizecache        int32         `json:"-" bson:"-"`
 }
 
 func (m *RequiredInnerMessage) Reset()         { *m = RequiredInnerMessage{} }
@@ -1902,10 +1902,10 @@ type MyMessage struct {
 	// This field becomes [][]byte in the generated code.
 	RepBytes                     [][]byte `protobuf:"bytes,10,rep,name=rep_bytes,json=repBytes" json:"rep_bytes,omitempty"`
 	Bigfloat                     *float64 `protobuf:"fixed64,11,opt,name=bigfloat" json:"bigfloat,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{} `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{} `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *MyMessage) Reset()         { *m = MyMessage{} }
@@ -2027,9 +2027,9 @@ func (m *MyMessage) GetBigfloat() float64 {
 
 type MyMessage_SomeGroup struct {
 	GroupField           *int32   `protobuf:"varint,9,opt,name=group_field,json=groupField" json:"group_field,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *MyMessage_SomeGroup) Reset()         { *m = MyMessage_SomeGroup{} }
@@ -2067,9 +2067,9 @@ func (m *MyMessage_SomeGroup) GetGroupField() int32 {
 type Ext struct {
 	Data                 *string         `protobuf:"bytes,1,opt,name=data" json:"data,omitempty"`
 	MapField             map[int32]int32 `protobuf:"bytes,2,rep,name=map_field,json=mapField" json:"map_field,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
-	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
-	XXX_unrecognized     []byte          `json:"-"`
-	XXX_sizecache        int32           `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-" bson:"-"`
+	XXX_unrecognized     []byte          `json:"-" bson:"-"`
+	XXX_sizecache        int32           `json:"-" bson:"-"`
 }
 
 func (m *Ext) Reset()         { *m = Ext{} }
@@ -2142,9 +2142,9 @@ type ComplexExtension struct {
 	First                *int32   `protobuf:"varint,1,opt,name=first" json:"first,omitempty"`
 	Second               *int32   `protobuf:"varint,2,opt,name=second" json:"second,omitempty"`
 	Third                []int32  `protobuf:"varint,3,rep,name=third" json:"third,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *ComplexExtension) Reset()         { *m = ComplexExtension{} }
@@ -2194,10 +2194,10 @@ func (m *ComplexExtension) GetThird() []int32 {
 }
 
 type DefaultsMessage struct {
-	XXX_NoUnkeyedLiteral         struct{} `json:"-"`
-	proto.XXX_InternalExtensions `json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{} `json:"-" bson:"-"`
+	proto.XXX_InternalExtensions `json:"-" bson:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *DefaultsMessage) Reset()         { *m = DefaultsMessage{} }
@@ -2234,10 +2234,10 @@ func (m *DefaultsMessage) XXX_DiscardUnknown() {
 var xxx_messageInfo_DefaultsMessage proto.InternalMessageInfo
 
 type MyMessageSet struct {
-	XXX_NoUnkeyedLiteral         struct{} `json:"-"`
+	XXX_NoUnkeyedLiteral         struct{} `json:"-" bson:"-"`
 	proto.XXX_InternalExtensions `protobuf_messageset:"1" json:"-"`
-	XXX_unrecognized             []byte `json:"-"`
-	XXX_sizecache                int32  `json:"-"`
+	XXX_unrecognized             []byte `json:"-" bson:"-"`
+	XXX_sizecache                int32  `json:"-" bson:"-"`
 }
 
 func (m *MyMessageSet) Reset()         { *m = MyMessageSet{} }
@@ -2274,9 +2274,9 @@ func (m *MyMessageSet) XXX_DiscardUnknown() {
 var xxx_messageInfo_MyMessageSet proto.InternalMessageInfo
 
 type Empty struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *Empty) Reset()         { *m = Empty{} }
@@ -2306,9 +2306,9 @@ var xxx_messageInfo_Empty proto.InternalMessageInfo
 
 type MessageList struct {
 	Message              []*MessageList_Message `protobuf:"group,1,rep,name=Message,json=message" json:"message,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
-	XXX_unrecognized     []byte                 `json:"-"`
-	XXX_sizecache        int32                  `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}               `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                 `json:"-" bson:"-"`
+	XXX_sizecache        int32                  `json:"-" bson:"-"`
 }
 
 func (m *MessageList) Reset()         { *m = MessageList{} }
@@ -2346,9 +2346,9 @@ func (m *MessageList) GetMessage() []*MessageList_Message {
 type MessageList_Message struct {
 	Name                 *string  `protobuf:"bytes,2,req,name=name" json:"name,omitempty"`
 	Count                *int32   `protobuf:"varint,3,req,name=count" json:"count,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *MessageList_Message) Reset()         { *m = MessageList_Message{} }
@@ -2393,9 +2393,9 @@ func (m *MessageList_Message) GetCount() int32 {
 type Strings struct {
 	StringField          *string  `protobuf:"bytes,1,opt,name=string_field,json=stringField" json:"string_field,omitempty"`
 	BytesField           []byte   `protobuf:"bytes,2,opt,name=bytes_field,json=bytesField" json:"bytes_field,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *Strings) Reset()         { *m = Strings{} }
@@ -2462,9 +2462,9 @@ type Defaults struct {
 	Sub *SubDefaults `protobuf:"bytes,18,opt,name=sub" json:"sub,omitempty"`
 	// Redundant but explicit defaults.
 	StrZero              *string  `protobuf:"bytes,19,opt,name=str_zero,json=strZero,def=" json:"str_zero,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *Defaults) Reset()         { *m = Defaults{} }
@@ -2648,9 +2648,9 @@ func (m *Defaults) GetStrZero() string {
 
 type SubDefaults struct {
 	N                    *int64   `protobuf:"varint,1,opt,name=n,def=7" json:"n,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *SubDefaults) Reset()         { *m = SubDefaults{} }
@@ -2689,9 +2689,9 @@ func (m *SubDefaults) GetN() int64 {
 
 type RepeatedEnum struct {
 	Color                []RepeatedEnum_Color `protobuf:"varint,1,rep,name=color,enum=test_proto.RepeatedEnum_Color" json:"color,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-" bson:"-"`
+	XXX_unrecognized     []byte               `json:"-" bson:"-"`
+	XXX_sizecache        int32                `json:"-" bson:"-"`
 }
 
 func (m *RepeatedEnum) Reset()         { *m = RepeatedEnum{} }
@@ -2734,9 +2734,9 @@ type MoreRepeated struct {
 	Int64SPacked         []int64  `protobuf:"varint,7,rep,packed,name=int64s_packed,json=int64sPacked" json:"int64s_packed,omitempty"`
 	Strings              []string `protobuf:"bytes,5,rep,name=strings" json:"strings,omitempty"`
 	Fixeds               []uint32 `protobuf:"fixed32,6,rep,name=fixeds" json:"fixeds,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *MoreRepeated) Reset()         { *m = MoreRepeated{} }
@@ -2815,9 +2815,9 @@ func (m *MoreRepeated) GetFixeds() []uint32 {
 
 type GroupOld struct {
 	G                    *GroupOld_G `protobuf:"group,101,opt,name=G,json=g" json:"g,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-" bson:"-"`
+	XXX_unrecognized     []byte      `json:"-" bson:"-"`
+	XXX_sizecache        int32       `json:"-" bson:"-"`
 }
 
 func (m *GroupOld) Reset()         { *m = GroupOld{} }
@@ -2854,9 +2854,9 @@ func (m *GroupOld) GetG() *GroupOld_G {
 
 type GroupOld_G struct {
 	X                    *int32   `protobuf:"varint,2,opt,name=x" json:"x,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GroupOld_G) Reset()         { *m = GroupOld_G{} }
@@ -2893,9 +2893,9 @@ func (m *GroupOld_G) GetX() int32 {
 
 type GroupNew struct {
 	G                    *GroupNew_G `protobuf:"group,101,opt,name=G,json=g" json:"g,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-" bson:"-"`
+	XXX_unrecognized     []byte      `json:"-" bson:"-"`
+	XXX_sizecache        int32       `json:"-" bson:"-"`
 }
 
 func (m *GroupNew) Reset()         { *m = GroupNew{} }
@@ -2933,9 +2933,9 @@ func (m *GroupNew) GetG() *GroupNew_G {
 type GroupNew_G struct {
 	X                    *int32   `protobuf:"varint,2,opt,name=x" json:"x,omitempty"`
 	Y                    *int32   `protobuf:"varint,3,opt,name=y" json:"y,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *GroupNew_G) Reset()         { *m = GroupNew_G{} }
@@ -2980,9 +2980,9 @@ func (m *GroupNew_G) GetY() int32 {
 type FloatingPoint struct {
 	F                    *float64 `protobuf:"fixed64,1,req,name=f" json:"f,omitempty"`
 	Exact                *bool    `protobuf:"varint,2,opt,name=exact" json:"exact,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *FloatingPoint) Reset()         { *m = FloatingPoint{} }
@@ -3029,9 +3029,9 @@ type MessageWithMap struct {
 	MsgMapping           map[int64]*FloatingPoint `protobuf:"bytes,2,rep,name=msg_mapping,json=msgMapping" json:"msg_mapping,omitempty" protobuf_key:"zigzag64,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	ByteMapping          map[bool][]byte          `protobuf:"bytes,3,rep,name=byte_mapping,json=byteMapping" json:"byte_mapping,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	StrToStr             map[string]string        `protobuf:"bytes,4,rep,name=str_to_str,json=strToStr" json:"str_to_str,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	XXX_NoUnkeyedLiteral struct{}                 `json:"-"`
-	XXX_unrecognized     []byte                   `json:"-"`
-	XXX_sizecache        int32                    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                 `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                   `json:"-" bson:"-"`
+	XXX_sizecache        int32                    `json:"-" bson:"-"`
 }
 
 func (m *MessageWithMap) Reset()         { *m = MessageWithMap{} }
@@ -3110,9 +3110,9 @@ type Oneof struct {
 	// Types that are valid to be assigned to Tormato:
 	//	*Oneof_Value
 	Tormato              isOneof_Tormato `protobuf_oneof:"tormato"`
-	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
-	XXX_unrecognized     []byte          `json:"-"`
-	XXX_sizecache        int32           `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-" bson:"-"`
+	XXX_unrecognized     []byte          `json:"-" bson:"-"`
+	XXX_sizecache        int32           `json:"-" bson:"-"`
 }
 
 func (m *Oneof) Reset()         { *m = Oneof{} }
@@ -3422,9 +3422,9 @@ func (*Oneof) XXX_OneofWrappers() []interface{} {
 
 type Oneof_F_Group struct {
 	X                    *int32   `protobuf:"varint,17,opt,name=x" json:"x,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *Oneof_F_Group) Reset()         { *m = Oneof_F_Group{} }
@@ -3471,9 +3471,9 @@ type Communique struct {
 	//	*Communique_Col
 	//	*Communique_Msg
 	Union                isCommunique_Union `protobuf_oneof:"union"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-" bson:"-"`
+	XXX_unrecognized     []byte             `json:"-" bson:"-"`
+	XXX_sizecache        int32              `json:"-" bson:"-"`
 }
 
 func (m *Communique) Reset()         { *m = Communique{} }
@@ -3617,9 +3617,9 @@ type TestUTF8 struct {
 	Oneof                isTestUTF8_Oneof `protobuf_oneof:"oneof"`
 	MapKey               map[string]int64 `protobuf:"bytes,4,rep,name=map_key,json=mapKey" json:"map_key,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
 	MapValue             map[int64]string `protobuf:"bytes,5,rep,name=map_value,json=mapValue" json:"map_value,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-" bson:"-"`
+	XXX_unrecognized     []byte           `json:"-" bson:"-"`
+	XXX_sizecache        int32            `json:"-" bson:"-"`
 }
 
 func (m *TestUTF8) Reset()         { *m = TestUTF8{} }

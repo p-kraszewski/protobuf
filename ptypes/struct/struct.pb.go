@@ -60,9 +60,9 @@ func (NullValue) XXX_WellKnownType() string { return "NullValue" }
 type Struct struct {
 	// Unordered map of dynamically typed values.
 	Fields               map[string]*Value `protobuf:"bytes,1,rep,name=fields,proto3" json:"fields,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-" bson:"-"`
+	XXX_unrecognized     []byte            `json:"-" bson:"-"`
+	XXX_sizecache        int32             `json:"-" bson:"-"`
 }
 
 func (m *Struct) Reset()         { *m = Struct{} }
@@ -116,9 +116,9 @@ type Value struct {
 	//	*Value_StructValue
 	//	*Value_ListValue
 	Kind                 isValue_Kind `protobuf_oneof:"kind"`
-	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
-	XXX_unrecognized     []byte       `json:"-"`
-	XXX_sizecache        int32        `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-" bson:"-"`
+	XXX_unrecognized     []byte       `json:"-" bson:"-"`
+	XXX_sizecache        int32        `json:"-" bson:"-"`
 }
 
 func (m *Value) Reset()         { *m = Value{} }
@@ -255,9 +255,9 @@ func (*Value) XXX_OneofWrappers() []interface{} {
 type ListValue struct {
 	// Repeated field of dynamically typed values.
 	Values               []*Value `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
 }
 
 func (m *ListValue) Reset()         { *m = ListValue{} }
